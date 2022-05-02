@@ -1,0 +1,12 @@
+# app/config/serialization/
+
+App\Entity\Exam:
+  attributes:
+    id:
+      groups: ['read:Exam:collection']
+    name:
+      groups: [write:Exam, update:Exam, read:Exam:collection]
+    createdAt:
+      groups: [read:Exam:collection]
+    questions:
+      groups: [write:Exam, update:Exam, read:Exam:item, read:Exam:collection]

@@ -1,0 +1,10 @@
+# app/config/serialization/
+
+App\Entity\Question:
+  attributes:
+    id:
+      groups: [read:Exam:item, read:Exam:collection]
+    question:
+      groups: [write:Question, update:Question, write:Exam, update:Exam, read:Exam:item, read:Exam:collection]
+    answers:
+      groups: [write:Question, update:Question, write:Exam, update:Exam, read:Exam:item]

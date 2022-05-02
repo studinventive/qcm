@@ -1,0 +1,17 @@
+# app/config/api_platform/resources/
+
+App\Entity\Question:
+  attributes: 
+    denormalization_context:
+      groups: [write:Question, update:Question, write:Exam, update:Exam]
+    normalization_context:
+      groups: ['read:Question:item']
+
+  collectionOperations:
+    post: ~
+    
+  itemOperations:
+    get:
+      normalization_context:
+        groups: [read:Question:item, read:Exam:item, read:Exam:collection]
+    delete: ~
